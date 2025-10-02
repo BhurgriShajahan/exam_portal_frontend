@@ -1,0 +1,75 @@
+<!-- Main Navbar -->
+<nav
+    class="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-sm">
+    <div class="px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+
+            <!-- Logo -->
+            <div class="flex items-center space-x-2 cursor-pointer" routerLink="/home">
+                <div
+                    class="h-9 w-9 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 flex items-center justify-center text-white font-bold shadow-md">
+                    ⚡
+                </div>
+                <span class="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+                    ExamPortal
+                </span>
+            </div>
+
+            <!-- Desktop & Tablet Menu -->
+            <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                <a *ngFor="let item of navItems" [routerLink]="item.path" routerLinkActive="active-link"
+                    class="nav-link text-sm lg:text-base flex items-center space-x-2 transition-all duration-200">
+                    <lucide-icon [name]="item.icon" class="w-4 h-4 lg:w-5 lg:h-5 transition-colors"></lucide-icon>
+                    <span class="whitespace-nowrap">{{ item.label }}</span>
+                </a>
+            </div>
+
+            <!-- Right Side Controls -->
+            <div class="flex items-center space-x-3">
+
+                <!-- Theme Toggle - Always Visible -->
+                <button (click)="toggleTheme()" aria-label="Toggle Theme"
+                    class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:scale-110 transform transition-all duration-200 shadow-md hover:shadow-lg">
+                    <lucide-icon *ngIf="isDarkMode" name="sun"
+                        class="w-4 h-4 lg:w-5 lg:h-5 text-yellow-400"></lucide-icon>
+                    <lucide-icon *ngIf="!isDarkMode" name="moon"
+                        class="w-4 h-4 lg:w-5 lg:h-5 text-gray-700 dark:text-gray-300"></lucide-icon>
+                </button>
+
+
+                <!-- Mobile Menu Button -->
+                <button
+                    class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200"
+                    (click)="toggleMenu()" aria-label="Toggle Menu" [attr.aria-expanded]="mobileMenuOpen">
+                    <svg *ngIf="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg *ngIf="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 lg:h-6 lg:w-6"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div *ngIf="mobileMenuOpen"
+            class="md:hidden absolute top-16 left-0 right-0  bg-white dark:bg-gray-900 border-b border-gray-200  dark:border-gray-700 shadow-lg backdrop-blur-lg">
+            <div class="px-4 py-3 space-y-1  ">
+                <a *ngFor="let item of navItems; let i = index" [routerLink]="item.path"
+                    routerLinkActive="active-mobile-link" (click)="closeMenu()" [style.--i]="i"
+                    class="mobile-dropdown-link flex items-center space-x-3 py-3 px-4 rounded-lg transition-all duration-200">
+                    <lucide-icon [name]="item.icon" class="w-5 h-5 transition-colors"></lucide-icon>
+                    <span class="font-medium">{{ item.label }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Spacer for fixed navbar -->
+<div class="h-16"></div>

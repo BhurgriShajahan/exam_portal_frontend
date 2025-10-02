@@ -1,0 +1,133 @@
+/* Custom animations and enhancements */
+:host {
+    display: block;
+}
+
+/* Smooth focus transitions */
+input:focus {
+    outline: none;
+    ring: 2px;
+}
+
+/* Custom scrollbar for dark mode */
+.dark ::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #6B7280;
+    border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #9CA3AF;
+}
+
+/* Loading animation for submit button */
+.submitting {
+    position: relative;
+    color: transparent;
+}
+
+.submitting::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pulse animation for success states */
+@keyframes pulse-green {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.border-green-500 {
+    animation: pulse-green 2s infinite;
+}
+
+/* Shake animation for invalid fields */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.border-red-500 {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Gradient text for headers */
+.gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Custom checkbox styling */
+input[type="checkbox"] {
+    border-radius: 0.25rem;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* Responsive design enhancements */
+@media (max-width: 768px) {
+    .min-h-screen {
+        padding: 1rem;
+    }
+
+    .bg-gradient-to-br {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+}
+
+/* Dark mode transitions */
+* {
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* Focus visible for accessibility */
+input:focus-visible {
+    ring: 2px solid #3b82f6;
+    ring-offset: 2px;
+}

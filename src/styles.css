@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Hide scrollbar but keep scrolling */
+::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+}
+
+* {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Scroll Animations */
+.animate-fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-fade-in-up.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom animations for different delays */
+.animate-fade-in-up:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.animate-fade-in-up:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.animate-fade-in-up:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.animate-fade-in-up:nth-child(4) {
+    transition-delay: 0.4s;
+}

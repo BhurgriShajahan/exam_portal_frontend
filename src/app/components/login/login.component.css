@@ -1,0 +1,19 @@
+:host {
+    display: block;
+}
+
+/* Social button style */
+.social-btn {
+    @apply flex items-center justify-center py-2 px-3 border rounded-lg bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm transition;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}

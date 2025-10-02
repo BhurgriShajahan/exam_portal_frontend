@@ -1,0 +1,295 @@
+/* Base Styles */
+.sidebar-container {
+    width: 100%;
+}
+
+/* Mobile Styles (Default) */
+.mobile-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.desktop-sidebar {
+    display: none;
+}
+
+/* Profile Images */
+.profile-image-mobile {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 4px solid #3b82f6;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* Personal Details Mobile */
+.personal-details-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.name-mobile {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.dark .name-mobile {
+    color: #ffffff;
+}
+
+.title-mobile {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.dark .title-mobile {
+    color: #9ca3af;
+}
+
+.contact-info-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    color: #374151;
+    font-size: 0.875rem;
+}
+
+.dark .contact-info-mobile {
+    color: #d1d5db;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.emoji {
+    font-size: 1rem;
+}
+
+/* Social Links Mobile */
+.social-links-mobile {
+    display: flex;
+    gap: 1rem;
+    padding-top: 0.5rem;
+}
+
+.social-link {
+    color: #6b7280;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: #2563eb;
+    transform: scale(1.1);
+}
+
+.dark .social-link {
+    color: #9ca3af;
+}
+
+.dark .social-link:hover {
+    color: #60a5fa;
+}
+
+.social-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Tablet Styles */
+@media (min-width: 640px) {
+    .profile-image-mobile {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .name-mobile {
+        font-size: 1.75rem;
+    }
+
+    .title-mobile {
+        font-size: 1rem;
+    }
+
+    .contact-info-mobile {
+        font-size: 1rem;
+    }
+
+    .social-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .mobile-sidebar {
+        display: none;
+    }
+
+    .desktop-sidebar {
+        display: block;
+        position: fixed;
+        width: auto;
+    }
+
+    .desktop-sidebar-content {
+        position: sticky;
+        top: 8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        border-right: 2px solid #e5e7eb;
+        padding-right: 1.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        height: fit-content;
+    }
+
+    .dark .desktop-sidebar-content {
+        border-right-color: #374151;
+    }
+
+    /* Profile Image Desktop */
+    .profile-image-desktop {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 9999px;
+        overflow: hidden;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border: 4px solid #3b82f6;
+    }
+
+    /* Personal Details Desktop */
+    .personal-details-desktop {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .name-desktop {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1f2937;
+    }
+
+    .dark .name-desktop {
+        color: #ffffff;
+    }
+
+    .title-desktop {
+        color: #6b7280;
+        font-size: 1rem;
+    }
+
+    .dark .title-desktop {
+        color: #9ca3af;
+    }
+
+    .contact-info-desktop {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: #374151;
+        font-size: 0.875rem;
+    }
+
+    .dark .contact-info-desktop {
+        color: #d1d5db;
+    }
+
+    .contact-item {
+        justify-content: flex-start;
+    }
+
+    /* Social Links Desktop */
+    .social-links-desktop {
+        display: flex;
+        gap: 1rem;
+        padding-top: 0.5rem;
+    }
+
+    .social-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1280px) {
+    .profile-image-desktop {
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .name-desktop {
+        font-size: 1.75rem;
+    }
+
+    .desktop-sidebar-content {
+        gap: 2rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+    .profile-image-mobile {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .name-mobile {
+        font-size: 1.25rem;
+    }
+
+    .contact-info-mobile {
+        font-size: 0.75rem;
+    }
+
+    .social-icon {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .sidebar-container {
+        color-scheme: dark;
+    }
+}

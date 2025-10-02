@@ -1,0 +1,36 @@
+<footer
+    class="mt-3 bg-gray-200 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">
+    <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+
+        <!-- Left: Copyright -->
+        <div class="text-sm text-center md:text-left">
+            &copy; {{ currentYear }} Shahjahan Bhurgri. All rights reserved.
+        </div>
+
+        <!-- Center: Navigation -->
+        <div class="flex space-x-4">
+            <a *ngFor="let item of navItems" [routerLink]="item.path"
+                class="hover:text-blue-600 dark:hover:text-blue-400 text-sm">
+                {{ item.label }}
+            </a>
+        </div>
+
+        <!-- Right: Social Icons -->
+        <div class="flex space-x-4">
+            <a href="https://github.com/yourusername" target="_blank"
+                class="hover:text-blue-600 dark:hover:text-blue-400 transition-transform hover:scale-110">
+                <lucide-icon name="github" class="w-5 h-5"></lucide-icon>
+            </a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank"
+                class="hover:text-blue-600 dark:hover:text-blue-400 transition-transform hover:scale-110">
+                <lucide-icon name="linkedin" class="w-5 h-5"></lucide-icon>
+            </a>
+            <a href="https://twitter.com/yourusername" target="_blank"
+                class="hover:text-blue-600 dark:hover:text-blue-400 transition-transform hover:scale-110">
+                <lucide-icon name="twitter" class="w-5 h-5"></lucide-icon>
+            </a>
+        </div>
+
+    </div>
+</footer>
