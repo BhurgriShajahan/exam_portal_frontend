@@ -13,6 +13,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LucideAngularModule, Moon, Sun, Home, Folder, Phone, LogIn, Info, UserPlus } from 'lucide-angular';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
+import { ToastComponent } from './components/toast-component/toast-component.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     HomeComponent,
     AboutComponent,
     SidebarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ToastComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
       Moon, Sun, Home, Folder, Phone, LogIn, Info, UserPlus
     }),
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

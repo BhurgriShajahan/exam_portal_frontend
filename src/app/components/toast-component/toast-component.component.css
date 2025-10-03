@@ -1,0 +1,27 @@
+/* Toast animations */
+:host {
+    display: block;
+}
+
+/* Slide in from right animation */
+.toast-enter {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.toast-enter-active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.3s ease-out;
+}
+
+.toast-exit {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-exit-active {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s ease-in;
+}
